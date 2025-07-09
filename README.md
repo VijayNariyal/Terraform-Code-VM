@@ -65,7 +65,7 @@ Deploys Azure Virtual Machines with the specified size, image, admin credentials
 
 ### `KV/` – 🔐 Key Vault Module
 Creates an Azure Key Vault for managing secrets, certificates, and keys. Useful for securely storing sensitive information like passwords and connection strings.
-
+Add the KeyVault name on the **Prod/main.tf** and on **VM/data.tf**
 ---
 
 ### `Prod/` – 🚀 Parent Module
