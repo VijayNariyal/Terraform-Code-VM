@@ -6,7 +6,7 @@ module "rg" {
 module "key_vault" {
   depends_on = [ module.rg ]
   source = "../KV"
-  key_vault_name = "mykeyvault991111"
+  key_vault_name = "Your-KVault-Name"
   resource_group_name = "RG-Terraform"
   resource_group_location = "East US"
 }
@@ -50,6 +50,6 @@ module "vm" {
   resource_group_name = "RG-Terraform"
   resource_group_location = "East US"
   network_interface_name = "NIC-Terraform"
-  key_vault_name = "mykeyvault991111"
+  key_vault_name = "Your-KVault-Name"
 }
 
