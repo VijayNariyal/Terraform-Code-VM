@@ -1,8 +1,9 @@
 module "rg" {
   source = "../RG"
-    resource_group_name = "RG-Terraform"
+    resource_group_name = "Your-RG-Name"
     resource_group_location = "East US"
 }
+
 module "key_vault" {
   depends_on = [ module.rg ]
   source = "../KV"
@@ -10,6 +11,7 @@ module "key_vault" {
   resource_group_name = "RG-Terraform"
   resource_group_location = "East US"
 }
+
 module "virtual_network" {
   depends_on = [ module.rg ]
   source = "../VNET"
@@ -29,6 +31,7 @@ module "network_interface" {
     public_ip_name = "PIP-Terraform"
     nsg_name = "NSG-Terraform"
 }
+
 module "subnet" {
     depends_on = [ module.virtual_network ]
   source = "../SUBNET"
@@ -36,6 +39,7 @@ module "subnet" {
   resource_group_name = "RG-Terraform"
   virtual_network_name = "VNet-Terraform"
 }
+
 module "public_ip" {
     depends_on = [ module.rg ]
   source = "../PIP"
@@ -43,6 +47,7 @@ module "public_ip" {
   resource_group_name = "RG-Terraform"
   resource_group_location = "East US"
 }
+
 module "vm" {
     depends_on = [ module.virtual_network, module.public_ip, module.key_vault ]
   source = "../VM"

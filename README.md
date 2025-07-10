@@ -70,6 +70,7 @@ Creates an Azure Key Vault for managing secrets, certificates, and keys. Useful 
 
 ### `Prod/` – 🚀 Parent Module
 This is the **main execution point**. It calls and configures all the above child modules to deploy a complete, production-ready environment. All variables and outputs are consolidated here.
+You can change **your resource group name** in the main.tf of Prod folder and work just run the terraform code also change the kvault name.
 
 ---
 
