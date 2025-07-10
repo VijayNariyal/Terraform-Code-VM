@@ -79,7 +79,8 @@ This is the **main execution point**. It calls and configures all the above chil
 2. Configure your `terraform.tfvars` with all necessary variables.
 3. Run the following commands:
 
-```bash
+```
 terraform init
 terraform plan
 terraform apply
+```
